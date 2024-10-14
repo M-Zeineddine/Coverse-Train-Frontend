@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { IonApp, IonContent, IonHeader, IonToolbar, IonTitle, IonButtons, IonMenu, IonMenuButton, IonButton, IonModal, IonList, IonItem, IonLabel, IonIcon } from "@ionic/angular/standalone";
 import { UserService } from 'src/app/services/user/user.service';
@@ -12,6 +12,7 @@ import { AddUserPage } from "../add-user/add-user.page";
   standalone: true,
   templateUrl: './users.page.html',
   styleUrls: ['./users.page.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [IonIcon, IonLabel, IonItem, IonList, IonModal,
     IonApp,
     IonContent,

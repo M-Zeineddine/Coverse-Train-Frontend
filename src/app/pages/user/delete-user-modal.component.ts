@@ -1,10 +1,11 @@
-import { Component, Input, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { IonToolbar, IonApp, IonContent, IonHeader, IonTitle, IonButtons, IonButton } from "@ionic/angular/standalone";
 
 @Component({
     selector: 'app-delete-user-modal',
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [
         IonApp,
         IonContent,

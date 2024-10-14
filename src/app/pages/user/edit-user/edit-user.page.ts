@@ -1,4 +1,4 @@
-import { Component, OnInit, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, model } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonApp, IonContent, IonHeader, IonToolbar, IonTitle, IonButtons, IonMenu, IonMenuButton, IonButton, IonList, IonItem, IonLabel, IonRouterOutlet, IonBackButton } from "@ionic/angular/standalone";
 import { UserFormComponent } from 'src/app/components/user-form/user-form.component';
@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/user/user.service';
   templateUrl: './edit-user.page.html',
   styleUrls: ['./edit-user.page.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [IonBackButton, IonRouterOutlet, IonLabel, IonItem,
     IonApp,
     IonContent,
