@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="center-content">
+    <div class="button-container">
+      <ion-button routerLink="/users/add" color="primary">Add</ion-button>
+    </div>
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (user of this.users; track user.name) {
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <ion-button [routerLink]="['/users/edit', user.id]" color="tertiary">Edit</ion-button>
+            <ion-button color="danger" (click)="openDeleteModal(user)">Delete</ion-button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+
+  </div>
+</ion-content>

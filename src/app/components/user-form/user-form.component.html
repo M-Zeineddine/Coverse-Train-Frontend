@@ -1,0 +1,31 @@
+<ion-content class="ion-padding">
+  <form (submit)="onSave()">
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" [value]="config()?.name || ''" (ionInput)="updateName($event)">
+      </ion-input>
+    </ion-item>
+    @if(nameError()){
+    <div>
+      <p style="color: red; font-size: 12px;">{{ nameError() }}</p>
+    </div>
+    }
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [value]="config()?.email || ''" (ionInput)="updateEmail($event)">
+      </ion-input>
+    </ion-item>
+    @if (emailError() && emailError()!.length > 0) {
+      <div>
+        <ul>
+          <li *ngFor="let error of emailError()" style="color: red; font-size: 12px;">
+            {{ error }}
+          </li>
+        </ul>
+      </div>
+    }
+
+    <ion-button expand="block" type="submit">Save</ion-button>
+  </form>
+</ion-content>
